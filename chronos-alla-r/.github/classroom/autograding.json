@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Main",
+      "setup": "git clone https://github.com/so2niko-students/task-chronos-test __tests__ && npm install",
+      "run": "CI=true npm test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}

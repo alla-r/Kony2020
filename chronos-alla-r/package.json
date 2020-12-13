@@ -1,0 +1,15 @@
+{
+  "private" : true,
+  "name": "tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chronos.js",
+  "devDependencies": {
+    "jest" : "*"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
