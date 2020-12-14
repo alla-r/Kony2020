@@ -10,7 +10,7 @@ export default function task5 ( obj ) {
   if ( obj.min > obj.max ) {
     return {
       status: 'failed',
-      reason: `"min" shouldn't be greater than "max"`
+      reason: `"min" shouldn't be greater "max"`
     }
   }
 
