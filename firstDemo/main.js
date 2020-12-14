@@ -54,5 +54,5 @@ import task7 from './src/task7.js';
 // console.log(task6(3, 12));
 
 // Fibonacci for a range
-console.log(task7({ min: 3, max: 123 }));
-console.log(task7({ length: 4 }));
+// console.log(task7({ min: 3, max: 123 }));
+// console.log(task7({ length: 8 }));

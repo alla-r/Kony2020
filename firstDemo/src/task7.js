@@ -15,7 +15,48 @@ export default function task7 ( obj ) {
     }
   }
 
-  
+  let prev = 0;
+  let curr = 1;
+  const resultMinMax = [];
+  // Min max
+  while ( prev <= obj.max ) {
 
-  return 3;
+    if ( prev >= obj.min ) {
+      resultMinMax.push(prev);
+    }
+
+    let temp = curr;
+    curr = prev + curr;
+    prev = temp;
+  }
+
+  // Length
+  prev = 0;
+  curr = 1;
+  const resultLength = [];
+  while ( prev.toString().length <= obj.length ) {
+
+    if ( prev.toString().length >= obj.length ) {
+      resultLength.push(prev);
+    }
+
+    let temp = curr;
+    curr = prev + curr;
+    prev = temp;
+  }
+
+  // Length new
+  prev = 0;
+  curr = 1;
+  const resultLengthNew = [];
+  while ( resultLengthNew.length < obj.length ) {
+    resultLengthNew.push(prev);
+
+    let temp = curr;
+    curr = prev + curr;
+    prev = temp;
+
+  }
+
+  return resultMinMax.length !== 0 ? resultMinMax : resultLengthNew;
 }

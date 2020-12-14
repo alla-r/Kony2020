@@ -40,7 +40,7 @@ export default function task3 (arr) {
     return obj1.square - obj2.square;
   });
 
-  return arr;
+  return arr.map(el => el.vertices);
 }
 
 function getSideLength (vertice, obj) {
