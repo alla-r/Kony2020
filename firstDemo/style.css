@@ -1,0 +1,35 @@
+:root {
+  --task1: #00a8ff;
+  --task2: #9c88ff;
+  --task3: #fbc531;
+  --task4: #4cd137;
+  --task5: #e84118;
+  --task6: #7f8fa6;
+  --task7: #273c75;
+}
+
+.bg-task1 { background-color: var(--task1); }
+.bg-task2 { background-color: var(--task2); }
+.bg-task3 { background-color: var(--task3); }
+.bg-task4 { background-color: var(--task4); }
+.bg-task5 { background-color: var(--task5); }
+.bg-task6 { background-color: var(--task6); }
+.bg-task7 { background-color:var(--task7); }
+
+/* .text-task1 { color: var(--task1); }
+.text-task2 { color: var(--task2); }
+.text-task3 { color: var(--task3); }
+.text-task4 { color: var(--task4); }
+.text-task5 { color: var(--task5); }
+.text-task6 { color: var(--task6); }
+.text-task7 { color: var(--task7); } */
+
+.task-item {
+  font-weight: lighter;
+  font-size: 1.75rem;
+}
+
+.task-item:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

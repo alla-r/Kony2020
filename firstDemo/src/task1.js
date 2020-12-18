@@ -6,7 +6,7 @@ export default function task1 (height, width, sign) {
     }
   }
 
-  if (isNaN(arguments[0]) || isNaN(arguments[1]) ) {
+  if (isNaN(height) || isNaN(width) ) {
     return {
       status: 'failed',
       reason: `First and second arguments should be numbers, that define height and width of the chess board`

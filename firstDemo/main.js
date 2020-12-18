@@ -7,9 +7,35 @@ import task6 from './src/task6.js';
 import task7 from './src/task7.js';
 
 // Chess board
+const taskBtnList = [...document.querySelectorAll('.btn-task')];
+console.log(taskBtnList);
+
+taskBtnList.forEach( btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const numTask = e.target.id.match(/\d/);
+    console.log(numTask);
+    const inputList = e.target.parentNode.querySelectorAll(`#task${numTask[0]} input`);
+    const result = chooseFunc(+numTask[0], inputList[0].value, inputList[1].value, inputList[2].value, inputList[3].value);
+    console.log(task1(inputList[0].value, inputList[1].value, inputList[2].value));
+
+    console.log(result);
+  });
+});
+
+function chooseFunc(id, ...args) {
+  switch(id) {
+    case 1:
+      return task1(args[0], args[1], args[2]);
+    case 2:
+      return task2({a: args[0], b: args[1]}, {c: args[2], d: args[3]});
+  }
+}
+
+
 // console.log(task1());
 // console.log(task1(3, 8, '*'));
-// console.log(task1('4', 6, 'a'));
+// console.log(task1('4', 6, 'alla'));
 // console.log(task1(3, 'sre', '*'));
 // console.log(task1(3, 8, '#'));
 
