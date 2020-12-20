@@ -14,22 +14,22 @@
         <div class="task-item flex-fill py-4 px-5 bg-task1 collapsed" data-toggle="collapse" data-target="#task1" aria-expanded="true" aria-controls="task1">
           <span>Task 1</span>
         </div>
-        <div class="task-item flex-fill py-4 px-5 bg-task2 collapsed" data-toggle="collapse" data-target="#task2">
+        <div class="task-item flex-fill py-4 px-5 bg-task2 collapsed" data-toggle="collapse" data-target="#task2" aria-expanded="false" aria-controls="task2">
           <span>Task 2</span>
         </div>
-        <div class="task-item flex-fill py-4 px-5 bg-task3 collapsed" data-toggle="collapse" data-target="#task3">
+        <div class="task-item flex-fill py-4 px-5 bg-task3 collapsed" data-toggle="collapse" data-target="#task3" aria-expanded="false" aria-controls="task3">
           <span>Task 3</span>
         </div>
-        <div class="task-item flex-fill py-4 px-5 bg-task4 collapsed" data-toggle="collapse" data-target="#task4">
+        <div class="task-item flex-fill py-4 px-5 bg-task4 collapsed" data-toggle="collapse" data-target="#task4" aria-expanded="false" aria-controls="task4">
           <span>Task 4</span>
         </div>
-        <div class="task-item flex-fill py-4 px-5 bg-task5 collapsed" data-toggle="collapse" data-target="#task5">
+        <div class="task-item flex-fill py-4 px-5 bg-task5 collapsed" data-toggle="collapse" data-target="#task5" aria-expanded="false" aria-controls="task5">
           <span>Task 5</span>
         </div>
-        <div class="task-item flex-fill py-4 px-5 bg-task6 collapsed" data-toggle="collapse" data-target="#task6">
+        <div class="task-item flex-fill py-4 px-5 bg-task6 collapsed" data-toggle="collapse" data-target="#task6" aria-expanded="false" aria-controls="task6">
           <span>Task 6</span>
         </div>
-        <div class="task-item flex-fill py-4 px-5 bg-task7 collapsed" data-toggle="collapse" data-target="#task7">
+        <div class="task-item flex-fill py-4 px-5 bg-task7 collapsed" data-toggle="collapse" data-target="#task7" aria-expanded="false" aria-controls="task7">
           <span>Task 7</span>
         </div>
       </div>
@@ -45,13 +45,13 @@
         <form>
           <div class="row">
             <div class="col">
-              <input type="text" class="form-control input-1" id="height-chess" placeholder="Enter height">
+              <input type="text" class="form-control" id="height-chess" placeholder="Enter height">
             </div>
             <div class="col">
-              <input type="text" class="form-control input-2" id="width-chess" placeholder="Enter width">
+              <input type="text" class="form-control" id="width-chess" placeholder="Enter width">
             </div>
             <div class="col">
-              <input type="text" class="form-control input-3" id="symbol-chess" placeholder="Enter symbol">
+              <input type="text" class="form-control" id="symbol-chess" placeholder="Enter symbol">
             </div>
             <small class="error pt-2 text-danger"></small>
             <button type="submit" class="btn btn-task bg-task1 mt-3 text-white" id="btn-task1">Get result</button>
@@ -73,13 +73,13 @@
           <div class="row">
             <div class="col">
               <p class="text-center">First envelope</p>
-              <input type="text" class="form-control input-1" id="height-envelope-1" placeholder="Enter height">
-              <input type="text" class="form-control mt-2 input-2" id="width-envelope-1" placeholder="Enter height">
+              <input type="text" class="form-control" id="height-envelope-1" placeholder="Enter height">
+              <input type="text" class="form-control mt-2" id="width-envelope-1" placeholder="Enter height">
             </div>
             <div class="col">
               <p class="text-center">Second envelope</p>
-              <input type="text" class="form-control input-3" id="height-envelope-2" placeholder="Enter height">
-              <input type="text" class="form-control mt-2 input-4" id="width-envelope-2" placeholder="Enter width">
+              <input type="text" class="form-control" id="height-envelope-2" placeholder="Enter height">
+              <input type="text" class="form-control mt-2" id="width-envelope-2" placeholder="Enter width">
             </div>
             <small class="error pt-2 text-danger"></small>
             <button type="submit" class="btn btn-task bg-task2 mt-3 text-white" id="btn-task2">Get result</button>
@@ -87,7 +87,38 @@
         </form>
       </div>
 
-      <div class="card card-body d-none bg-task1" id="output-task1"></div>
+      <div class="card card-body d-none bg-task2" id="output-task2"></div>
+    </section>
+
+    <!-- task 3 -->
+    <section id="task3" class="collapse">
+      <div class="card card-body bg-task3 text-white">
+        <h2 class="py-3 text-center">Sort triangles</h2>
+      </div> 
+      
+      <div class="card card-body">
+        <form>
+          <div class="row">
+            <label class="mb-2" for="vertices">Enter name of triangle's vertices</label>
+            <input type="text" class="form-control mb-2" id="vertices" placeholder="For example: ABC">
+            <label class="mb-2" for="side-1">Enter length of each triangle's side</label>
+            <input type="text" class="form-control mb-2" id="side-1" placeholder="Length of side 1">
+            <input type="text" class="form-control mb-2" id="side-2" placeholder="Length of side 2">
+            <input type="text" class="form-control mb-2" id="side-3" placeholder="Length of side 3">
+            
+            <small class="error pt-2 text-danger"></small>
+            <div class="col">
+              <button type="submit" class="btn btn-task bg-task3 mt-3 text-white" id="btn-task3-add">Add triangle</button>
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-task bg-success mt-3 text-white" id="btn-task3">Get result</button>
+            </div>
+            <!-- <button type="submit" class="btn btn-task bg-task1 mt-3 text-white" id="btn-task3">Get result</button> -->
+          </div>
+        </form>
+      </div>
+
+      <div class="card card-body d-none bg-task3" id="output-task3"></div>
     </section>
 
     

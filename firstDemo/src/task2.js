@@ -1,10 +1,17 @@
 /* Function will return the number of envelope that could be nested or 0 if it's impossible */ 
 
 export default function task2 ( env1, env2 ) {
-  if ( !env1.a || !env1.b || !env2.c || !env2.d ) {
+  if ( !+env1.a || !+env1.b || !+env2.c || !+env2.d ) {
     return {
       status: 'failed',
-      reason: `You need to pass to the function first object with "a" and "b" keys and second object with "c" and "d" keys`
+      reason: `You need to enter height and width for two envelopes. It should be numbers.`
+    }
+  }
+
+  if ( env1.a <= 0 || env1.b <= 0 || env2.c <= 0 || env2.d <= 0 ) {
+    return {
+      status: 'failed',
+      reason: `The length of envelopes height and width couldn't be equal or less than zero`
     }
   }
 

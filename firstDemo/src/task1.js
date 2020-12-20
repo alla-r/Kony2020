@@ -1,17 +1,36 @@
 export default function task1 (height, width, sign) {
-  if (arguments.length < 3) {
+
+  if (arguments.length < 3 || !height || !width || !sign) {
     return {
       status: 'failed',
-      reason: `You need to pass to the function 3 arguments: height, width and sign that will represent the chess board`
+      reason: `You need to enter height, width and sign that will represent the chess board`
     }
   }
 
   if (isNaN(height) || isNaN(width) ) {
     return {
       status: 'failed',
-      reason: `First and second arguments should be numbers, that define height and width of the chess board`
+      reason: `Height and width should be numbers`
     }
   }  
+
+  if ( sign.length > 1 ) {
+    return {
+      status: 'failed',
+      reason: `The length of symbol should be = 1`
+    }
+  }
+
+  if ( height == 0 || width == 0 ) {
+    return '';
+  }
+
+  if ( height < 0 || width < 0 ) {
+    return {
+      status: 'failed',
+      reason: `The height and the width couldn't be negative number`
+    }
+  }
 
   let chessBoard = '';
 
