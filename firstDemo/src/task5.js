@@ -1,5 +1,4 @@
 export default function task5 ( obj ) {
-  // console.log(obj);
   if ( obj.min !== 0 && !obj.min || !obj.max ) {
     return {
       status: 'failed',
@@ -12,10 +11,7 @@ export default function task5 ( obj ) {
       status: 'failed',
       reason: `Zero ticket doesn't exist`
     }
-  }
-
-  
-  
+  }  
 
   if ( !obj.min || !obj.max ) {
     return {

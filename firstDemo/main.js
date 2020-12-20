@@ -172,7 +172,7 @@ btn6.addEventListener('click', e => {
   const len = document.querySelector('#len-sequence').value.trim();
   const minSquare = document.querySelector('#min-square').value.trim();
   
-  const result = task6(+len, +minSquare);
+  const result = task6(len, minSquare);
 
   if (result.reason) {
     setInnerError(6, result.reason);
