@@ -1,7 +1,7 @@
 /* Function will return the number of envelope that could be nested or 0 if it's impossible */ 
 
 export default function task2 ( env1, env2 ) {
-  if ( !+env1.a || !+env1.b || !+env2.c || !+env2.d ) {
+  if ( !env1.a || !env1.b || !env2.c || !env2.d ) {
     return {
       status: 'failed',
       reason: `You need to enter height and width for two envelopes. It should be numbers.`
