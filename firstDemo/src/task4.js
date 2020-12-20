@@ -1,6 +1,12 @@
 // Palindrome
 
 export default function task4 (num) {
+  if (!num) {
+    return {
+      status: 'failed',
+      reason: `You should enter a number`
+    }
+  }
   if (isNaN(+num)) {
     return {
       status: 'failed',

@@ -14,7 +14,8 @@ const btn3Add = document.getElementById('btn-task3-add');
 const btn4 = document.getElementById('btn-task4');
 const btn5 = document.getElementById('btn-task5');
 const btn6 = document.getElementById('btn-task6');
-const btn7 = document.getElementById('btn-task7');
+const btn7min = document.getElementById('btn-task7-min');
+const btn7len = document.getElementById('btn-task7-len');
 
 function setInnerError(id, text) {
   const err = document.querySelector(`#task${id} .error`);
@@ -23,7 +24,7 @@ function setInnerError(id, text) {
 
 function setOutput(id, result) {
   let classVal;
-  result ? classVal = `card card-body bg-task${id} text-white` : `card card-body d-none`;
+  result ? classVal = `card card-body bg-task${id} text-white` : classVal = `card card-body d-none`;
 
   const output =  document.querySelector(`#output-task${id}`);
   output.classList = classVal;
@@ -86,7 +87,6 @@ btn3Add.addEventListener('click', e => {
   if ( !vertices || !side1 || !side2 || !side3 ) {
     setInnerError(3, `You should fill all fields before add another triangle`);
   } else if ( vertices.length !== 3 ) {
-    // console.log('err');
     setInnerError(3, `Name of triangles vertices should have 3 letters`);
   } else if ( !+side1 || !+side2 || !+side3 ) {
     setInnerError(3, `Length of triangle's sides should be a number`);
@@ -108,16 +108,19 @@ btn3Add.addEventListener('click', e => {
 btn3.addEventListener('click', e => {
   e.preventDefault();
 
-  // console.log(e.target);
-
-  let result = task3(arrTriangles);
-
-  if (result.reason) {
-    setInnerError(3, result.reason);
+  if (arrTriangles.length === 0) {
+    setInnerError(3, `You need to add triangles before sorting`);
     setOutput(3, false);
   } else {
-    setInnerError(3, '');
-    setOutput(3, `[ ${result} ]`);
+    let result = task3(arrTriangles);
+
+    if (result.reason) {
+      setInnerError(3, result.reason);
+      setOutput(3, false);
+    } else {
+      setInnerError(3, '');
+      setOutput(3, `[ ${result} ]`);
+    }
   }
 });
 
@@ -150,10 +153,6 @@ btn5.addEventListener('click', e => {
   
   const result = task5({min: +min, max: +max});
 
-  // let outputText;
-
-  // result === 0 ? outputText = `This number doesn't have palindrome` : outputText = `The longest palindrome is ${result}`
-
   if (result.reason) {
     setInnerError(5, result.reason);
     setOutput(5, false);
@@ -166,79 +165,56 @@ btn5.addEventListener('click', e => {
   }
 });
 
+// TASK 6
+btn6.addEventListener('click', e => {
+  e.preventDefault();
 
-// const taskBtnList = [...document.querySelectorAll('.btn-task')];
-// console.log(taskBtnList);
+  const len = document.querySelector('#len-sequence').value.trim();
+  const minSquare = document.querySelector('#min-square').value.trim();
+  
+  const result = task6(+len, +minSquare);
 
-// taskBtnList.forEach( btn => {
-//   btn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     const numTask = e.target.id.match(/\d/);
-//     console.log(numTask);
-//     const inputList = e.target.parentNode.querySelectorAll(`#task${numTask[0]} input`);
-//     const result = chooseFunc(+numTask[0], inputList[0].value, inputList[1].value, inputList[2].value, inputList[3].value);
-//     console.log(task1(inputList[0].value, inputList[1].value, inputList[2].value));
+  if (result.reason) {
+    setInnerError(6, result.reason);
+    setOutput(6, false);
+  } else {
+    setInnerError(6, '');
+    setOutput(6, `<p>${result}</p>`);
+  } 
+});
 
-//     console.log(result);
-//   });
-// });
+// TASK 7
 
-// function chooseFunc(id, ...args) {
-//   switch(id) {
-//     case 1:
-//       return task1(args[0], args[1], args[2]);
-//     case 2:
-//       return task2({a: args[0], b: args[1]}, {c: args[2], d: args[3]});
-//   }
-// }
+btn7min.addEventListener('click', e => {
+  e.preventDefault();
 
+  const min = document.querySelector('#fib-min').value.trim();
+  const max = document.querySelector('#fib-max').value.trim();
 
-// console.log(task1());
-// console.log(task1(3, 8, '*'));
-// console.log(task1('4', 6, 'alla'));
-// console.log(task1(3, 'sre', '*'));
-// console.log(task1(3, 8, '#'));
+  let result = task7({min: +min, max: +max});
 
-// Envelope
-// console.log(task2({ a: 3, b: 5 }, { c: 2, d: 6 }));
-// console.log(task2({ a: 3, b: 5 }, { c: 2, d: 1 }));
-// console.log(task2({ a: 3 }, { c: 2, d: 6 }));
+  if (result.reason) {
+    setInnerError(7, result.reason);
+    setOutput(7, false);
+  } else {
+    setInnerError(7, '');
+    setOutput(7, `[ ${result} ]`);
+  }
+  
+});
 
-// Sort triangles
-// console.log(task3([
-//   {
-//     vertices: 'ABC',
-//     a: 10,
-//     b: 20,
-//     c: 22.36
-//   },
-//   {
-//     vertices: 'DBC',
-//     d: 11,
-//     b: 20,
-//     c: 22.36
-//   },
-//   {
-//     vertices: 'AYC',
-//     a: 9,
-//     y: 20,
-//     c: 22.36
-//   }
-// ]));
+btn7len.addEventListener('click', e => {
+  e.preventDefault();
 
-// Palindrome
-// console.log(task4(5));
-// console.log(task4('str'));
-// console.log(task4(1234437));
-// console.log(task4(3685751111989));
-// console.log(task4(123443566589));
+  const length = document.querySelector('#fib-len').value.trim();
 
-// Winning tickets
-// console.log(task5({ min: 643313, max: 643319 }));
+  let result = task7({length: length});
 
-// Numerical sequence
-// console.log(task6(3, 12));
-
-// Fibonacci for a range
-// console.log(task7({ min: 3, max: 123 }));
-// console.log(task7({ length: 8 }));
+  if (result.reason) {
+    setInnerError(7, result.reason);
+    setOutput(7, false);
+  } else {
+    setInnerError(7, '');
+    setOutput(7, `[ ${result} ]`);
+  }
+});

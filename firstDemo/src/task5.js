@@ -1,12 +1,21 @@
 export default function task5 ( obj ) {
   // console.log(obj);
-
-  if (obj.min === 0) {
+  if ( obj.min !== 0 && !obj.min || !obj.max ) {
+    return {
+      status: 'failed',
+      reason: `You need to enter min and max number for determining amount of winning tickets in this range`
+    }
+  }
+  
+  if (obj.min === 0 || obj.max === 0) {
     return {
       status: 'failed',
       reason: `Zero ticket doesn't exist`
     }
   }
+
+  
+  
 
   if ( !obj.min || !obj.max ) {
     return {
