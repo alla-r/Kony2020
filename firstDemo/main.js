@@ -86,7 +86,7 @@ btn3Add.addEventListener('click', e => {
   if ( !vertices || !side1 || !side2 || !side3 ) {
     setInnerError(3, `You should fill all fields before add another triangle`);
   } else if ( vertices.length !== 3 ) {
-    console.log('err');
+    // console.log('err');
     setInnerError(3, `Name of triangles vertices should have 3 letters`);
   } else if ( !+side1 || !+side2 || !+side3 ) {
     setInnerError(3, `Length of triangle's sides should be a number`);
@@ -108,7 +108,7 @@ btn3Add.addEventListener('click', e => {
 btn3.addEventListener('click', e => {
   e.preventDefault();
 
-  console.log(e.target);
+  // console.log(e.target);
 
   let result = task3(arrTriangles);
 
@@ -122,6 +122,49 @@ btn3.addEventListener('click', e => {
 });
 
 // TASK 4
+btn4.addEventListener('click', e => {
+  e.preventDefault();
+
+  const num = document.querySelector('#palindrome').value.trim();
+  
+  const result = task4(num);
+  let outputText;
+
+  result === 0 ? outputText = `This number doesn't have palindrome` : outputText = `The longest palindrome is ${result}`
+
+  if (result.reason) {
+    setInnerError(4, result.reason);
+    setOutput(4, false);
+  } else {
+    setInnerError(4, '');
+    setOutput(4, outputText);
+  }
+});
+
+// TASK 5
+btn5.addEventListener('click', e => {
+  e.preventDefault();
+
+  const min = document.querySelector('#min-ticket').value.trim();
+  const max = document.querySelector('#max-ticket').value.trim();
+  
+  const result = task5({min: +min, max: +max});
+
+  // let outputText;
+
+  // result === 0 ? outputText = `This number doesn't have palindrome` : outputText = `The longest palindrome is ${result}`
+
+  if (result.reason) {
+    setInnerError(5, result.reason);
+    setOutput(5, false);
+  } else if (result.winner) {
+    setInnerError(5, '');
+    setOutput(5, `${result.winner} wins. Amount of winning tickets using simple method is ${result.simpleMethod}, complicated - ${result.complicatedMethod}.`);
+  } else {
+    setInnerError(5, '');
+    setOutput(5, `${result.info} Amount of winning tickets using simple method is ${result.simpleMethod}, complicated - ${result.complicatedMethod}.`);
+  }
+});
 
 
 // const taskBtnList = [...document.querySelectorAll('.btn-task')];
@@ -187,7 +230,7 @@ btn3.addEventListener('click', e => {
 // console.log(task4(5));
 // console.log(task4('str'));
 // console.log(task4(1234437));
-// console.log(task4(3685751111));
+// console.log(task4(3685751111989));
 // console.log(task4(123443566589));
 
 // Winning tickets
