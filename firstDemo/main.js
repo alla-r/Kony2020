@@ -17,15 +17,6 @@ const dom = {
   btn7min : document.getElementById('btn-task7-min'),
   btn7len : document.getElementById('btn-task7-len')
 }
-// const btn1 = document.getElementById('btn-task1');
-// const btn2 = document.getElementById('btn-task2');
-// const btn3 = document.getElementById('btn-task3');
-// const btn3Add = document.getElementById('btn-task3-add');
-// const btn4 = document.getElementById('btn-task4');
-// const btn5 = document.getElementById('btn-task5');
-// const btn6 = document.getElementById('btn-task6');
-// const btn7min = document.getElementById('btn-task7-min');
-// const btn7len = document.getElementById('btn-task7-len');
 
 function setInnerError(id, text) {
   const err = document.querySelector(`#task${id} .error`);
