@@ -1,4 +1,4 @@
-/* Sort triangles   CHECK  */ 
+/* Sort triangles */ 
 
 export default function task3 (arr) {
 
