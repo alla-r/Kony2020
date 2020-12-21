@@ -1,0 +1,88 @@
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+  /* background: url('./img/pixel-heart.png');
+  height: 100vh; */
+}
+
+.container {
+  width: 50vw;
+  height: 90vh;
+  margin: 2rem auto;
+  background-color: rgb(0, 0, 0, 0.5);
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+}
+
+.add-new-couple {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.images {
+  width: auto;
+}
+
+.percent {
+  margin-top: 2rem;
+}
+
+.percent p {
+  margin-left: 10px;
+  display: inline-block;
+  color: rgb(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+}
+
+.btn-percent {
+  cursor: default;
+  color: rgb(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 1.75rem;
+}
+
+.btn-percent span {
+  cursor: pointer;
+  color: red;
+  text-decoration: none;
+  font-size: 1.75rem;
+}
+
+.output {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.85rem;
+  text-align: center;
+}
+
+.icon {
+  display: inline-block;
+  margin: 0 2.9rem;
+  font-size: 1.75rem;
+  /* margin-left: -5rem; */
+}
