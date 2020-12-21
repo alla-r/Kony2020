@@ -1,17 +1,10 @@
 /* Fibonacci for a range */ 
 
 export default function task7 ( obj ) {
-  if (obj.length <= 0 && obj.length) {
+  if (obj.length <= 0) {
     return {
       status: 'failed',
       reason: `The length can't be equal or less than zero.`
-    }
-  }
-
-  if ( (obj.min !== 0 && !obj.min || !obj.max) && !obj.length ) {
-    return {
-      status: 'failed',
-      reason: `The input object should have "min" and "max" fields or "length" field`
     }
   }
  
@@ -29,10 +22,10 @@ export default function task7 ( obj ) {
     }
   }
 
+  // Min max
   let prev = 0;
   let curr = 1;
   const resultMinMax = [];
-  // Min max
   while ( prev <= obj.max ) {
 
     if ( prev >= obj.min ) {

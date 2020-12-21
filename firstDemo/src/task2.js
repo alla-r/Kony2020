@@ -2,10 +2,10 @@
 
 export default function task2 ( env1, env2 ) {
   
-  if ( env1.a === '' || env1.b === '' || env2.c === '' || env2.d === '' ) {
+  if ( isNaN(env1.a) || isNaN(env1.b) || isNaN(env2.c) || isNaN(env2.d) ) {
     return {
       status: 'failed',
-      reason: `You need to enter height and width for two envelopes. It should be numbers.`
+      reason: `The value of envelopes' height and width should be numbers.`
     }
   }
 

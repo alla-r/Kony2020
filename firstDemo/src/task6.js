@@ -1,13 +1,6 @@
 /* Numerical sequence */
 
 export default function task6 (n, m) {
-  if ( !n || !m ) {
-    return {
-      status: 'failed',
-      reason: `You need to enter length of numerical sequence and value of minimum square`
-    }
-  }
-
   if (n === 0) {
     return '';
   }

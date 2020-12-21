@@ -1,13 +1,7 @@
 // Palindrome
 
 export default function task4 (num) {
-  if (!num) {
-    return {
-      status: 'failed',
-      reason: `You should enter a number`
-    }
-  }
-  if (isNaN(+num)) {
+  if (isNaN(num)) {
     return {
       status: 'failed',
       reason: `The input value should be a number`
@@ -20,7 +14,6 @@ export default function task4 (num) {
       reason: `Numbers that are equal or greater than 0 and less than 10 are not considered as palindrome`
     }
   }
-
 
   const arr = String(num).split('');
   let indexStart = 0;
