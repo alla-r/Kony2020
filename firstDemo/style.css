@@ -16,14 +16,6 @@
 .bg-task6 { background-color: var(--task6); }
 .bg-task7 { background-color:var(--task7); }
 
-/* .text-task1 { color: var(--task1); }
-.text-task2 { color: var(--task2); }
-.text-task3 { color: var(--task3); }
-.text-task4 { color: var(--task4); }
-.text-task5 { color: var(--task5); }
-.text-task6 { color: var(--task6); }
-.text-task7 { color: var(--task7); } */
-
 .task-item {
   font-weight: lighter;
   font-size: 1.75rem;
