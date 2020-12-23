@@ -18,8 +18,8 @@ export default function task4 (num) {
   const arr = String(num).split('');
   let indexStart = 0;
   let indexEnd = 0;
-  let palindrome = 0;
-  let tempPal = 0;
+  let palindrome = '';
+  let tempPal = '';
   
   for ( let i = 0; i < arr.length; i++ ) {
     for ( let j = arr.length - 1; j > i; j-- ) {
@@ -40,11 +40,11 @@ export default function task4 (num) {
         }
 
         if (indexEnd) {
-          tempPal = Number(arr.slice(indexStart, indexEnd + 1).join(''));
+          tempPal = arr.slice(indexStart, indexEnd + 1).join('');
         }
       }
 
-      if (tempPal.toString().length > palindrome.toString().length) {
+      if (tempPal.length > palindrome.length) {
         palindrome = tempPal;
       }
     }

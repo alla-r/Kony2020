@@ -106,6 +106,8 @@ dom.btn3Add.addEventListener('click', e => {
     setInnerError(3, `Name of triangles vertices should have 3 letters`);
   } else if ( !+side1 || !+side2 || !+side3 ) {
     setInnerError(3, `Length of triangle's sides should be a number`);
+  } else if ( !(Number(side1) + Number(side2) > side3) || !(Number(side3) + Number(side2) > side1) || !(Number(side1) + Number(side3) > side2) ) {
+    setInnerError(3, `Triangle doesn't exist.`);
   } else {
     setInnerError(3, '');
     arrTriangles.push({

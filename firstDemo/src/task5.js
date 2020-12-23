@@ -25,39 +25,26 @@ export default function task5 ( obj ) {
       status: 'failed',
       reason: `"min" and "max" numbers should be in [0; 999 999] range`
     }
-  }
-
-  obj.min = getSixDigitNumber(obj.min);
-  obj.max = getSixDigitNumber(obj.max);
+  }  
 
   let winFirst = 0;
   let winSecond = 0;
 
-  for ( let i = obj.min; i <= obj.max; i++ ) {
+  for ( let i = obj.min; i <= obj.max; i++) {
+    i = getSixDigitNumber(i);
     const arrNum = i.toString().split('');
 
     // First method
     const sumFirstPart = Number(arrNum[0]) + Number(arrNum[1]) + Number(arrNum[2]);
     const sumSecondPart = Number(arrNum[3]) + Number(arrNum[4]) + Number(arrNum[5]);
-   
+    
     if ( sumFirstPart === sumSecondPart ) {
       winFirst++;
     }
 
     // Second method
-    const even = arrNum.reduce( (acc, cur, i) => {
-      if (i % 2 === 0) {
-        return acc + Number(cur);
-      }
-      return acc;
-    }, 0);
-    const odd = arrNum.reduce( (acc, cur, i) => {
-      if (i % 2 !== 0) {
-        return acc + Number(cur);
-      }
-      return acc;
-    }, 0);
-
+    const even = Number(arrNum[0]) + Number(arrNum[2]) + Number(arrNum[4]);
+    const odd = Number(arrNum[1]) + Number(arrNum[3]) + Number(arrNum[5]);
     if ( even === odd ) {
       winSecond++;
     }
@@ -99,5 +86,5 @@ function getSixDigitNumber(num) {
   }
 
   result += num;
-  return Number(result);
+  return result;
 }
